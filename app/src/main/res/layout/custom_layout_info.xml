@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/heading_text_size"
+            android:text="@string/yearly_usage_breakdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbl_info_title"
+            android:layout_marginEnd="@dimen/common_small_margin"
+            android:layout_marginStart="@dimen/common_small_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/row_info_divider"
+            app:layout_constraintTop_toTopOf="@+id/lbl_info_title"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/lbl_info_title"
+            app:layout_constraintStart_toStartOf="@+id/lbl_info_title"
+            android:layout_marginBottom="@dimen/common_small_margin"
+            android:layout_marginStart="@dimen/common_margin"
+            android:layout_marginEnd="@dimen/common_margin"
+            android:background="@color/colorDivider"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/quarter_breakdown_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/common_small_margin"
+            android:layout_marginEnd="@dimen/common_small_margin"
+            app:layout_constraintTop_toTopOf="@+id/row_info_divider"
+            tools:listitem="@layout/row_quarter_breakdown" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
